@@ -1,0 +1,34 @@
+<div class="maintenanceMain">
+    <h2>List of Flats</h2>
+    <h4>You can search by any of the following category :</h4>
+    <form [formGroup]="flatFilterForm">
+     <div class="number">
+      <label for="flatsNo">Enter Flat Number</label>
+      <input type="text" formControlName="flatNo" id="flatsNo">
+      <button (click)="filterFlatsByMaintenanceDue()">Filter Flats</button>
+     </div>
+  
+     <div class="name">
+      <label for="flatOwnerName">Enter the flat Owner Name</label>
+      <input type="text" formControlName="flatOwner" id="flatOwnerName">
+      <button (click)="filterFlatOwnerByMaintenanceDue()">Filter Flats</button>
+     </div>
+     <div class="name">
+      <label for="mAmount">Enter the flat Owner Name</label>
+      <input type="number" formControlName="amount" id="mAmount">
+      <button (click)="filterFlatByMaintenanceDueAmt()">Filter Flats</button>
+     </div>
+    </form>
+  
+    <!-- List by Filteration -->
+ <div class="cardshere">
+    <div *ngFor="let flat of filteredFlats" class="flat-card">
+        <div class="card-content">
+          <p class="flat-info">Flat Name: {{ flat.flatname }}</p>
+          <p class="flat-info">Flat Owner: {{ flat.flatownername }}</p>
+          <p class="flat-info">Maintenance Due: {{ flat.maintenance }}</p>
+        </div>
+    </div>
+ </div>
+  
+  </div>

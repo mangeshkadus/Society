@@ -1,0 +1,17 @@
+<!-- home.component.html -->
+
+<div class="society-info">
+    <p class="Name name-container" [@fadeIn]>{{ societyName }}</p>
+    <p>{{ societyInfo }}</p>
+  </div>
+
+  
+  <div class="banner">
+    <ngb-carousel *ngIf="carouselImages.length > 0">
+      <ng-template ngbSlide *ngFor="let image of carouselImages">
+        <img [src]="image" class="d-block w-100" alt="Banner Image">
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  
+  
