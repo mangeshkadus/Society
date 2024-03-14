@@ -31,16 +31,25 @@ export class PaymaintenanceComponent implements OnInit {
   }
 
   onSubmit(): void {
+    //nodejs call
     if (this.maintenanceForm.valid) {
       const payload = {
         flatname: 'Flat ' + this.maintenanceForm.value.flatName,
         maintenance: this.maintenanceForm.value.amount
       };
 
-      // Call maintenance service to update maintenance
       this.maintenanceService.updateMaintenance(payload).subscribe(res => {
         console.log(res);
       });
+
+//Spring boot call
+      const payload1 = {
+        flatname: 'Flat ' + this.maintenanceForm.value.flatName.toString(),
+        maintenance: 100
+      }
+      this.maintenanceService.payMaintenance(payload1).subscribe(res=>{
+
+      })
     }
   }
 }

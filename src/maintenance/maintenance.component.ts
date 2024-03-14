@@ -24,8 +24,17 @@ export class MaintenanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMaintenanceData();
+    this.maintenancefromsts();
   }
-
+  //data from sts
+  maintenancefromsts(): void {
+    this.maintenanceService.getAllMaintenance()
+      .subscribe(data => {
+        this.maintenanceData = data;
+        console.log(data)
+      });
+  }
+  //data from nodejs
   getMaintenanceData(): void {
     this.maintenanceService.getMaintenanceData()
       .subscribe(data => {
