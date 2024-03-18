@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaymaintenanceComponent } from 'src/paymaintenance/paymaintenance.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupComponent } from 'src/popup/popup.component';
+import { LoginComponent } from 'src/login/login.component';
+import { HeaderComponent } from 'src/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PopupComponent } from 'src/popup/popup.component';
     HomeComponent,
     MaintenanceComponent,
     PaymaintenanceComponent,
-    PopupComponent
+    PopupComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
